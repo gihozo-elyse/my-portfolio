@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: radial-gradient(circle at 25% 20%, rgba(255, 106, 0, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(255, 106, 0, 0.06), transparent 28%),
+    #0c0c0d;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #ff6a00, #ff9340);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-black font-semibold transition duration-300 hover:opacity-90;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-full border border-primary text-primary font-semibold transition duration-300 hover:bg-primary/10;
+}
+
+.nav-link {
+  @apply text-sm font-semibold tracking-wider uppercase text-muted;
+}
+
+.nav-link.active {
+  @apply text-white;
+}
+
+.social-btn {
+  @apply w-11 h-11 rounded-full border border-primary flex items-center justify-center text-primary transition duration-300;
+}
+
+.social-btn:hover {
+  @apply bg-primary text-black;
+}
+
+.section {
+  @apply py-20;
+}
+
+.section-subtitle {
+  @apply text-muted text-lg text-center mt-4;
+}
+
+.card {
+  @apply bg-card border border-border rounded-2xl;
+}
+
+.skill-bar {
+  @apply h-2 w-full rounded-full bg-border overflow-hidden;
+}
+
+.skill-bar-fill {
+  @apply h-full rounded-full bg-primary;
+}
+
+.project-card {
+  @apply card overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-glow;
+}
+
+.contact-input {
+  @apply w-full px-4 py-3 rounded-lg bg-secondary border border-border text-sm focus:border-primary focus:outline-none transition;
+}
+
+.animate-slide-up {
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-down {
+  animation-fill-mode: forwards;
+}
+
+/* Sticker effect for images */
+.sticker-effect {
+  position: relative;
+  background: transparent;
+  box-shadow: 
+    0 0 20px rgba(255, 106, 0, 0.6),
+    0 0 40px rgba(255, 106, 0, 0.4),
+    0 0 60px rgba(255, 106, 0, 0.2),
+    0 0 80px rgba(255, 106, 0, 0.1);
+}
+
+.sticker-effect::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.4), rgba(255, 147, 64, 0.2), transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.8;
+}
+
+.sticker-effect:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 106, 0, 0.8),
+    0 0 60px rgba(255, 106, 0, 0.6),
+    0 0 90px rgba(255, 106, 0, 0.4),
+    0 0 120px rgba(255, 106, 0, 0.2);
+}
+
+.sticker-effect:hover::before {
+  opacity: 1;
+  filter: blur(20px);
+}
+
